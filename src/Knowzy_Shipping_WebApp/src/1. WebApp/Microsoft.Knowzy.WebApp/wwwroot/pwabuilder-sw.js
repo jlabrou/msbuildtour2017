@@ -15,12 +15,14 @@ self.addEventListener('install', function (event) {
 //If any fetch fails, it will look for the request in the cache and serve it from there first
 self.addEventListener('fetch', function (event) {
     var updateCache = function (request) {
-        return caches.open('pwabuilder-offline').then(function (cache) {
-            return fetch(request).then(function (response) {
-                console.log('[PWA Builder] add page to offline' + response.url)
-                return cache.put(request, response);
+        return caches.open('pwabuilder-offline')
+            .then(function (cache) {
+                return fetch(request)
+                    .then(function (response) {
+                        console.log('[PWA Builder] add page to offline: ' + response.url)
+                        return cache.put(request, response);
+                    });
             });
-        });
     };
 
     event.waitUntil(updateCache(event.request));
@@ -32,12 +34,14 @@ self.addEventListener('fetch', function (event) {
             //Check to see if you have it in the cache
             //Return response
             //If not in the cache, then return error page
-            return caches.open('pwabuilder-offline').then(function (cache) {
-                return cache.match(event.request).then(function (matching) {
-                    var report = !matching || matching.status == 404 ? Promise.reject('no-match') : matching;
-                    return report
+            return caches.open('pwabuilder-offline')
+                .then(function (cache) {
+                    return cache.match(event.request)
+                        .then(function (matching) {
+                            var report = !matching || matching.status == 404 ? Promise.reject('no-match') : matching;
+                            return report
+                        });
                 });
-            });
         })
     );
 })
