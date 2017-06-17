@@ -1,0 +1,31 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:54044/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "api/values",
+      "environmentVariables": {
+        "COSMOSDB_ENDPOINT": "https://jlvs6nosql.documents.azure.com:443/",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "COSMOSDB_KEY": "LLvpy3SIWXifotm1NOVBEaqjOHLIAjfCdreHlf71iLTC74GqNQslHuFtvdB91OAajmEmEMLqLgwiOCpH7gEKDw=="
+      }
+    },
+    "Microsoft.Knowzy.OrdersAPI": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/values",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:54045"
+    }
+  }
+}

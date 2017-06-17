@@ -28,8 +28,7 @@ namespace Microsoft.Knowzy.Models.Profiles
 
             CreateMap<OrderLineViewModel, OrderLine>()
                 .ForMember(orderLine => orderLine.Price,
-                    options => options.ResolveUsing(
-                        orderLineViewModel => orderLineViewModel.Quantity * orderLineViewModel.ProductPrice));
+                    options => options.ResolveUsing(orderLineViewModel => orderLineViewModel.Quantity * orderLineViewModel.ProductPrice));
         }
     }
 }
