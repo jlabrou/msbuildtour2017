@@ -1,7 +1,7 @@
 ﻿window.AppMap = {
     id: 'reno',
     debug: true,
-    logo: '.logo',
+    logo: '#logo',
     abilities: {
         appBar: {
             keepDefaultCommands: true,
