@@ -13,6 +13,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot/images\bottom-bar.png" />
+    <Content Remove="wwwroot/images\Knowz-logo.png" />
+    <Content Remove="wwwroot/images\pink.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Properties\PublishProfiles\KnowzyWA - Web Deploy.pubxml" />
   </ItemGroup>
 
@@ -30,10 +36,28 @@
     <Content Include="wwwroot\fonts\segoeui\segoeui.eot" />
     <Content Include="wwwroot\fonts\segoeui\segoeui.ttf" />
     <Content Include="wwwroot\fonts\segoeui\segoeui.woff" />
+    <Content Include="wwwroot\images\09ec35ce-94e5-38af-29f3-07077deb708b.webPlatform.png" />
+    <Content Include="wwwroot\images\0c3fa464-e895-d7a8-1430-7e23e1728cf1.webPlatform.png" />
+    <Content Include="wwwroot\images\16002d9c-9296-46f3-ebf5-39416b2be491.webPlatform.png" />
+    <Content Include="wwwroot\images\40f2ff8d-efc5-b255-8ad6-5d09357add9a.webPlatform.png" />
+    <Content Include="wwwroot\images\4272c29b-8288-b0fb-da5e-81fde1c8b1ca.webPlatform.png" />
+    <Content Include="wwwroot\images\50c2d67d-9675-87bf-0a90-d4c3f3b4062c.webPlatform.png" />
+    <Content Include="wwwroot\images\53394de3-a90f-84c4-4481-6fb85aecc3c5.webPlatform.png" />
+    <Content Include="wwwroot\images\7b3263b5-20c2-efc9-b74b-0715a5183339.webPlatform.png" />
+    <Content Include="wwwroot\images\969bd50f-3c5b-6547-c4f1-9f6009ccfa77.webPlatform.png" />
+    <Content Include="wwwroot\images\a32e7fc8-187c-8c9d-80ef-3524f55a0f13.webPlatform.png" />
+    <Content Include="wwwroot\images\a35d0753-3ab1-89e2-1c9f-822476070fff.webPlatform.png" />
+    <Content Include="wwwroot\images\a3e08efa-5331-0785-940a-7086057200f0.webPlatform.png" />
+    <Content Include="wwwroot\images\a9bf4acf-ec28-51a8-e19f-769de952b494.webPlatform.png" />
     <Content Include="wwwroot\images\add.svg" />
+    <Content Include="wwwroot\images\b83a0eb2-0112-97b6-0bdd-666545c27f91.webPlatform.png" />
     <Content Include="wwwroot\images\bg art.png" />
     <Content Include="wwwroot\images\bottom-bar.png" />
     <Content Include="wwwroot\images\clowns.png" />
+    <Content Include="wwwroot\images\d88e6059-1ba0-8536-9eba-bf19c577141a.webPlatform.png" />
+    <Content Include="wwwroot\images\deefbde6-c78c-1501-f857-ef4192391f57.webPlatform.png" />
+    <Content Include="wwwroot\images\e213544b-3e88-c22d-cbee-20c72a27415f.webPlatform.png" />
+    <Content Include="wwwroot\images\favicon.ico" />
     <Content Include="wwwroot\images\Knowz-logo.png" />
     <Content Include="wwwroot\images\menu-bar1.png" />
     <Content Include="wwwroot\images\pencil.svg" />
@@ -43,7 +67,13 @@
     <Content Include="wwwroot\images\trash.svg" />
     <Content Include="wwwroot\images\X.svg" />
     <Content Include="wwwroot\images\yellow.png" />
-    <Content Include="wwwroot\js\pwabuilder-sw.js" />
+    <Content Include="wwwroot\js\PWA.js" />
+    <Content Include="wwwroot\js\PWA\PWA.js" />
+    <Content Include="wwwroot\js\PWA\reno\appmap.js" />
+    <Content Include="wwwroot\js\pwa\reno\map.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\js\WPA.js" />
     <Content Include="wwwroot\lib\bootstrap\.bower.json" />
     <Content Include="wwwroot\lib\bootstrap\bower.json" />
     <Content Include="wwwroot\lib\bootstrap\CHANGELOG.md" />
@@ -414,6 +444,8 @@
     <Content Include="wwwroot\lib\jquery\src\var\support.js" />
     <Content Include="wwwroot\lib\jquery\src\var\toString.js" />
     <Content Include="wwwroot\lib\jquery\src\wrap.js" />
+    <Content Include="wwwroot\manifest.json" />
+    <Content Include="wwwroot\pwabuilder-sw-register.js" />
     <Content Include="wwwroot\pwabuilder-sw.js" />
   </ItemGroup>
   <ItemGroup>

@@ -1,17 +1,21 @@
 ﻿@*// ******************************************************************
-// Copyright (c) Microsoft. All rights reserved.
-// This code is licensed under the MIT License (MIT).
-// THE CODE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
-// THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
-// *******************************************************************@
+    // Copyright (c) Microsoft. All rights reserved.
+    // This code is licensed under the MIT License (MIT).
+    // THE CODE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+    // INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    // IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+    // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    // TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
+    // THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
+    // *******************************************************************@
 
 @model IEnumerable<Microsoft.Knowzy.Models.ViewModels.ShippingsViewModel>
 
+@section HeadExtension {
+    <link rel="manifest" href="manifest.json" />
+    <script src="pwabuilder-sw-register.js"></script>
+}
 
 <div class="toolbar hidden-xs">
     <span class="section-title">@ViewData["Title"] Information</span>
@@ -20,41 +24,51 @@
     </button>
 </div>
 
-<div class="row"> 
+<div class="row">
     <table class="table table-striped table-responsive main-grid">
         <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CompanyName)
-            </th>
-            <th class="hidden-xs">
-                @Html.DisplayNameFor(model => model.Tracking)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-        </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CompanyName)
+                </th>
+                <th class="hidden-xs">
+                    @Html.DisplayNameFor(model => model.Tracking)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+            </tr>
         </thead>
         <tbody>
-        @foreach (var item in Model) {
-            <tr onclick="location.href = '@(Url.Action("Details", "Shippings", new { orderId = item.Id }))'">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CompanyName)
-                </td>
-                <td class="hidden-xs">
-                    @Html.DisplayFor(modelItem => item.Tracking)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
-            </tr>
-        }
+            @foreach (var item in Model)
+            {
+                <tr onclick="location.href = '@(Url.Action("Details", "Shippings", new { orderId = item.Id }))'">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyName)
+                    </td>
+                    <td class="hidden-xs">
+                        @Html.DisplayFor(modelItem => item.Tracking)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                </tr>
+            }
         </tbody>
-    </table>  
+    </table>
 </div>
+
+@section Scripts{
+    <!-- Step 1/2: Include (an optional) AppMap to define what Reno abilities you want. -->
+    <script src="js/PWA/reno/appmap.js"></script>
+    <!-- Step 2/2: Include the renoloader script (locally or remotely) to inject/load the reno.js/reno.css when running on Windows -->
+    <script src="https://galeforce.azurewebsites.net/renoloader.js"></script>
+
+    <script src="js/PWA/pwa.js"></script>
+}
