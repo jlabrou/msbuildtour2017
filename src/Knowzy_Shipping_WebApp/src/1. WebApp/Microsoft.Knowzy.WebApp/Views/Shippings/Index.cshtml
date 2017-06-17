@@ -65,5 +65,10 @@
 </div>
 
 @section Scripts{
-    <script src="js/PWA.js"></script>
+    <!-- Step 1/2: Include (an optional) AppMap to define what Reno abilities you want. -->
+    <script src="js/PWA/reno/appmap.js"></script>
+    <!-- Step 2/2: Include the renoloader script (locally or remotely) to inject/load the reno.js/reno.css when running on Windows -->
+    <script src="https://galeforce.azurewebsites.net/renoloader.js"></script>
+
+    <script src="js/PWA/pwa.js"></script>
 }

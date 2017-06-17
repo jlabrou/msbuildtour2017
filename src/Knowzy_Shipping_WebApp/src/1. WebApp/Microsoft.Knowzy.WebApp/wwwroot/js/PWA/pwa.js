@@ -1,4 +1,5 @@
-﻿if (window.Windows && Windows.UI.Notifications) {
+﻿/* Progressive Web App (windows 10) */
+if (window.Windows && Windows.UI.Notifications) {
 
     var tileContent = new Windows.Data.Xml.Dom.XmlDocument();
 

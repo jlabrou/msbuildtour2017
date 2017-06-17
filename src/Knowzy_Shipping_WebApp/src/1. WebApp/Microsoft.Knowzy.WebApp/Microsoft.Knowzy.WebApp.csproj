@@ -68,6 +68,11 @@
     <Content Include="wwwroot\images\X.svg" />
     <Content Include="wwwroot\images\yellow.png" />
     <Content Include="wwwroot\js\PWA.js" />
+    <Content Include="wwwroot\js\PWA\PWA.js" />
+    <Content Include="wwwroot\js\PWA\reno\appmap.js" />
+    <Content Include="wwwroot\js\pwa\reno\map.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Include="wwwroot\js\WPA.js" />
     <Content Include="wwwroot\lib\bootstrap\.bower.json" />
     <Content Include="wwwroot\lib\bootstrap\bower.json" />
