@@ -1,0 +1,14 @@
+# The following command creates a Kubernetes cluster and generates both SSH keys and service principal credentials:
+# -n=dnsprefix, -d=container-service-name, -g=resource-group
+az acs create -n jlvs6clus -d jlvs6acs -g jlvs6res-acs --generate-ssh-keys --orchestrator-type kubernetes
+
+# Once your cluster is created, you'll need to get the config from Kubernetes into your Cloud Shell session so that you can interact with it.
+az acs kubernetes get-credentials --resource-group=jlvs6res-acs --name=jlvs6clus
+
+# Verify that you can used kubectl to talk to the cluster
+kubectl get pods
+
+# browse
+az acs kubernetes browse -g jlvs6res-acs -n jlvs6clus
+
+# https://docs.microsoft.com/en-us/azure/container-service/container-service-kubernetes-walkthrough

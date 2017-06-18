@@ -1,0 +1,21 @@
+# Deploy to Kubernetes
+# --image=<name of registry that contains your images>.azurecr.io
+kubectl run ordersapi --image=jlvs6containers.azurecr.io/knowzy/ordersapi:1 --env "COSMOSDB_ENDPOINT=https://jlvs6nosql.documents.azure.com:443/" --env "COSMOSDB_KEY=LLvpy3SIWXifotm1NOVBEaqjOHLIAjfCdreHlf71iLTC74GqNQslHuFtvdB91OAajmEmEMLqLgwiOCpH7gEKDw=="
+
+# View your running pods
+kubectl get pods
+
+# You've got containers running on Kubernetes, but they're not yet exposed to the outside world. Let's do that now
+# This will create an Azure Load Balancer to direct traffic to your app
+kubectl expose deployment ordersapi --port=80 --type=LoadBalancer
+
+# List Kubernetes services, which includes the external IP
+kubectl get svc
+
+# Deploy webapp
+# --image=<name of registry that contains your images>.azurecr.io
+# ORDERAPI_URL=external ip from "kubectl get svc"
+kubectl run webapp --image=jlvs6containers.azurecr.io/knowzy/webapp:1 --env "ORDERAPI_URL=52.233.172.23"
+
+# expose webapp
+kubectl expose deployment webapp --port=80 --type=LoadBalancer
